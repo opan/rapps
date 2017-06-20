@@ -34,5 +34,5 @@ end
 
 # Mounts the core application for this project
 
-Padrino.mount("PadApp::Admin", :app_file => Padrino.root('admin/app.rb')).to("/admin")
-Padrino.mount('PadApp::App', :app_file => Padrino.root('app/app.rb')).to('/')
+Padrino.mount("PadApp::Admin", app_file: Padrino.root('admin/app.rb')).to("/admin")
+Padrino.mount('PadApp::App', app_file: Padrino.root('app/app.rb')).to('/')
