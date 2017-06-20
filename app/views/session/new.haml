@@ -1,0 +1,31 @@
+!!! 5
+%html{ lang: 'en' }
+  %head
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    %meta{ content: 'text/html; charset=utf-8', 'http-equiv' => 'Content-Type' }
+    %meta{ name: :viewport, content: 'width=device-width,initial-scale=1' }
+    %title PadPad
+    = favicon_tag 'favicon.ico'
+    %link{ href: 'http://fonts.googleapis.com/css?family=Varela', rel: :stylesheet }
+    = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity: 'sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', crossorigin: "anonymous"
+    = javascript_include_tag 'https://code.jquery.com/jquery-3.1.1.slim.min.js', integrity: 'sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n', crossorigin: "anonymous"
+    = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js', crossorigin: "anonymous", integrity: 'sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb'
+    = javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js', crossorigin: "anonymous", integrity: 'sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn'
+
+
+  %body
+    .container
+      .row
+        .col-md-12
+          = form_tag '/sign_in', method: :post do
+            .form-group
+              = label_tag :email
+              = text_field_tag :email, class: 'form-control'
+            .form-group
+              = label_tag :password
+              = password_field_tag :password, class: 'form-control'
+            .form-group
+              = submit_tag 'Sign in', class: 'btn btn-primary'
