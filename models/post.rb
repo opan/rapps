@@ -1,4 +1,6 @@
 class Post < Sequel::Model
+  # Validations
+  #
   def validate
     validates_presence :title
     validates_presence :content
