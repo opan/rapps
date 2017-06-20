@@ -23,8 +23,9 @@ PadApp::App.controllers :session do
     render 'session/new', layout: false
   end
 
-  post :create, map: '/sign_in' do
-
+  post :create, map: '/sign_in', params: [:email, :password] do
+    user = User.authenticate(params[:email], params[:password])
+    debugger
   end
 
   delete :destroy, map: '/sign_out' do

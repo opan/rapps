@@ -25,8 +25,8 @@ gem 'sequel'
 gem 'pg'
 
 # Test requirements
-gem 'rspec', :group => 'test'
-gem 'rack-test', :require => 'rack/test', :group => 'test'
+gem 'rspec', group: 'test'
+gem 'rack-test', require: 'rack/test', group: 'test'
 
 # Padrino Stable Gem
 gem 'padrino', '0.14.1.1'
@@ -38,3 +38,7 @@ gem 'padrino', '0.14.1.1'
 # %w(core support gen helpers cache mailer admin).each do |g|
 #   gem 'padrino-' + g, '0.14.1.1'
 # end
+
+group :development do
+  gem 'byebug'
+end
