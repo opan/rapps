@@ -35,7 +35,7 @@ class User < Sequel::Model
   def self.authenticate(email, password)
     user = self.where(email: email).first
     return false if user.blank?
-    user.valid_password?(password)
+    user if user.valid_password?(password)
   end
 
   def valid_password?(typed_password)
